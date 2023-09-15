@@ -2,9 +2,9 @@
     "name": "Фикус",
     "short_name": "Веб-Прил.",
     "start_url": "/",
-    "display": "standalone",
-    "background_color": "#ffffff",
-    "theme_color": "#2196F3",
+    "display": "fullscreen",
+    "background_color": "#1D1B26",
+    "theme_color": "#1D1B26",
     "icons": [
       {
         "src": "icon.png",
