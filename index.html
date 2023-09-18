@@ -124,7 +124,7 @@
         var weekNumber = getWeekNumber(currentDate);
 
         // Определяем тип недели (числитель или знаменатель)
-        var weekType = weekNumber % 2 === 0 ? "Числитель(это с верху)" : "Знаменатель(это с низу)";
+        var weekType = weekNumber % 2 === 0 ? "Знаменатель(это с низу)" : "Числитель(это с верху)";
 
         // Выводим тип недели на страницу
         document.getElementById("weekType").innerHTML = "Сейчас " + weekType + " неделя";
