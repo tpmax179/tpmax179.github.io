@@ -211,7 +211,7 @@
         }
 
         function handleTouchMove(event) {
-          if (event.touches[0].clientY > startY - 50) {
+          if (event.touches[0].clientY > startY + 50) {
             // Если пользователь потянул вниз, то обновляем страницу
             location.reload();
             showRefreshIndicator();
