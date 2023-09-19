@@ -14,7 +14,6 @@
         <a id="ras" class="sliding-button">Расписание</a>
         <a id="lec" href="https://drive.google.com/drive/folders/1kTotTTT2Nc5Uucr0dU3sCeF3lzgUTGky" class="sliding-button">Лекции</a>
         <a id="zwon" class="sliding-button">Расписание звонков</a>
-        <a id="updateCacheButton" class="sliding-button">↺</a>
     </div>
     <p id="weekType"></p>
     <div id ="ras1">
@@ -111,7 +110,7 @@
                 <td>3</td>
                 <td>11-40 12-25 <br>
                     12-30 13-15</td>
-                <td>10-20 11-20<br>1</td>
+                <td>10-20 11-20</td>
               </tr>
         </table>
         <a id="bras1" class="sliding-button">back</a>
@@ -190,13 +189,6 @@
 
 
         //pull to refresh
-        document.getElementById('updateCacheButton').addEventListener('click', function() {
-        if (navigator.serviceWorker.controller) {
-            navigator.serviceWorker.controller.postMessage({ action: 'updateCache' });
-        } else {
-            console.error('Service Worker controller is not available.');
-        }
-        });
         
         
         // Задаем расписание звонков для понедельника - пятницы
