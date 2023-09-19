@@ -211,12 +211,14 @@
         }
 
         function handleTouchMove(event) {
-        if (event.touches[0].clientY > startY) {
+          if (event.touches[0].clientY > startY) {
             // Если пользователь потянул вниз, то обновляем страницу
             location.reload();
+          } else if (event.touches[0].clientY < startY - 50) {
+            // Если пользователь потянул вверх более чем на 50 пикселей, то показываем индикатор обновления и обновляем кеш
             showRefreshIndicator();
             handlePullToRefresh();
-        }
+          }
         }
 
         function showRefreshIndicator() {
