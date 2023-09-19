@@ -48,3 +48,11 @@ self.addEventListener('fetch', function(event) {
     })
   );
 });
+
+self.addEventListener('message', function(event) {
+  if (event.data.action === 'updateCache') {
+    caches.open(CACHE_NAME).then(function(cache) {
+      return cache.addAll(urlsToCache);
+    });
+  }
+});
