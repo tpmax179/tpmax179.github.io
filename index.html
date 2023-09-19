@@ -14,7 +14,6 @@
         <a id="ras" class="sliding-button">Расписание</a>
         <a id="lec" href="https://drive.google.com/drive/folders/1kTotTTT2Nc5Uucr0dU3sCeF3lzgUTGky" class="sliding-button">Лекции</a>
         <a id="zwon" class="sliding-button">Расписание звонков</a>
-        <a id="updateCacheButton" class="sliding-button">↺</a>
     </div>
     <p id="weekType"></p>
     <div id ="ras1">
@@ -190,13 +189,6 @@
 
 
         //pull to refresh
-        document.getElementById('updateCacheButton').addEventListener('click', function() {
-        if (navigator.serviceWorker.controller) {
-            navigator.serviceWorker.controller.postMessage({ action: 'updateCache' });
-        } else {
-            console.error('Service Worker controller is not available.');
-        }
-        });
         
         
         // Задаем расписание звонков для понедельника - пятницы
