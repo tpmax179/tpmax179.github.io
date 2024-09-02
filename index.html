@@ -116,7 +116,22 @@
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('sw.js')
             .then(function(registration) {
-                console.log('Service Worker зарегистрирован с успешно:', registration);
+                console.log('Service Worker зарегистрирован успешно:', registration);
+        
+                // Логика для проверки обновлений
+                registration.onupdatefound = function() {
+                    const installingWorker = registration.installing;
+                    installingWorker.onstatechange = function() {
+                        if (installingWorker.state === 'installed') {
+                            if (navigator.serviceWorker.controller) {
+                                // Новая версия доступна, уведомляем пользователя или автоматически обновляем
+                                if (confirm("Новая версия доступна. Обновить?")) {
+                                    window.location.reload();
+                                }
+                            }
+                        }
+                    };
+                };
             })
             .catch(function(error) {
                 console.log('Ошибка при регистрации Service Worker:', error);
