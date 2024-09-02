@@ -1,49 +1,49 @@
 // Название вашего кэша
-var CACHE_NAME = 'my-cache-new-schedule-4.1th-year';
+var CACHE_NAME = 'my-cache-new-schedule-4.2th-year';
 
 // Список ресурсов, которые вы хотите кэшировать
 var urlsToCache = [
   '/',
-  '/index.html?v=2',
+  '/index.html?v=3',
   '/style.css',
   '/icon.png'
 ];
 
-// Установка события
 self.addEventListener('install', function(event) {
-  // Открываем кэш и добавляем ресурсы в него
   event.waitUntil(
     caches.open(CACHE_NAME).then(function(cache) {
+      console.log('Открываю новый кэш:', CACHE_NAME);
       return cache.addAll(urlsToCache);
     })
   );
+  self.skipWaiting();
 });
 
-// Событие активации
 self.addEventListener('activate', function(event) {
-  // Удаление старых кэшей, если они есть
   event.waitUntil(
     caches.keys().then(function(cacheNames) {
       return Promise.all(
         cacheNames.map(function(cacheName) {
           if (cacheName !== CACHE_NAME) {
+            console.log('Удаляю старый кэш:', cacheName);
             return caches.delete(cacheName);
           }
         })
       );
+    }).then(function() {
+      console.log('Новый сервис-воркер активирован и старые кэши удалены');
+      return self.clients.claim();
     })
   );
 });
 
-// Событие перехвата запросов и возврата ресурсов из кэша, если они доступны
 self.addEventListener('fetch', function(event) {
   event.respondWith(
     caches.match(event.request).then(function(response) {
-      // Если ресурс найден в кэше, возвращаем его из кэша
       if (response) {
+        console.log('Возвращаю ресурс из кэша:', event.request.url);
         return response;
       }
-      // В противном случае делаем сетевой запрос
       return fetch(event.request);
     })
   );
