@@ -4,7 +4,7 @@ var CACHE_NAME = 'my-cache-new-schedule-4.1th-year';
 // Список ресурсов, которые вы хотите кэшировать
 var urlsToCache = [
   '/',
-  '/index.html',
+  '/index.html?v=2',
   '/style.css',
   '/icon.png'
 ];
