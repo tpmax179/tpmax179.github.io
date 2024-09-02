@@ -1,5 +1,5 @@
 // Название вашего кэша
-var CACHE_NAME = 'my-cache';
+var CACHE_NAME = 'my-cache-new-schedule-4th-year';
 
 // Список ресурсов, которые вы хотите кэшировать
 var urlsToCache = [
