@@ -5,8 +5,8 @@ var CACHE_NAME = 'my-cache-new-schedule-4.2th-year';
 var urlsToCache = [
   '/',
   '/index.html?v=3',
-  '/style.css',
-  '/icon.png'
+  '/style.css?v=3',
+  '/icon.png?v=3'
 ];
 
 self.addEventListener('install', function(event) {
