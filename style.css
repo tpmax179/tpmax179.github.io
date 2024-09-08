@@ -100,6 +100,7 @@ padding: 10px 20px;
 background: #1D1B26;
 color: white;
 white-space: nowrap;
+vertical-align: middle;
 }
 tr:last-child td:first-child {
 border-radius: 0 0 0 10px;
