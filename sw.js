@@ -1,12 +1,13 @@
 // Название вашего кэша
-var CACHE_NAME = 'my-cache-new-0.1';
+var CACHE_VERSION = "0.2";
+var CACHE_NAME = `my-cache-new-${CACHE_VERSION}`;
 
 // Список ресурсов, которые вы хотите кэшировать
 var urlsToCache = [
   '/',
-  '/index.html?v=4',
-  '/style.css?v=4',
-  '/icon.png?v=4'
+  `/index.html?v=${CACHE_VERSION}`,
+  `/style.css?v=${CACHE_VERSION}`,
+  `/icon.png?v=${CACHE_VERSION}`
 ];
 
 self.addEventListener('install', function(event) {
