@@ -1,6 +1,7 @@
 {
     "name": "Фикус",
     "short_name": "Фикус",
+    "description": "Ficus PWA",
     "start_url": "/",
     "display": "fullscreen",
     "background_color": "#1D1B26",
