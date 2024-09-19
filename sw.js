@@ -1,5 +1,5 @@
 // Название вашего кэша
-var CACHE_VERSION = "0.5";
+var CACHE_VERSION = "0.6";
 var CACHE_NAME = `my-cache-new-${CACHE_VERSION}`;
 
 // Список ресурсов, которые вы хотите кэшировать
