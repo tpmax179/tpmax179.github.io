@@ -274,6 +274,26 @@
         setInterval(function () {
         scheduleElement.textContent = calculateTimeUntilNextClass();
         }, 1000); // Обновляем каждую секунду
+    let deferredPrompt;
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      // Показать кнопку установки
+      showInstallButton();
+    });
+    
+    installButton.addEventListener('click', (e) => {
+      deferredPrompt.prompt();
+      deferredPrompt.userChoice.then((choiceResult) => {
+        if (choiceResult.outcome === 'accepted') {
+          console.log('User accepted the install prompt');
+        } else {
+          console.log('User dismissed the install prompt');
+        }
+        deferredPrompt = null;
+      });
+    });
 
     </script>
 
