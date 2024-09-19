@@ -17,5 +17,6 @@
         "sizes": "512x512",
         "type": "/"
       }
-    ]
+    ],
+    "display_override": ["window-controls-overlay", "fullscreen"]
   }
